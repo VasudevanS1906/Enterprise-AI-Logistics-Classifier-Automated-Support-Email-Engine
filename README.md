@@ -15,6 +15,12 @@ The system generates professional reply templates for each scenario, ensuring ac
 
 ---
 
+## Technical Architecture
+
+![architecture-diagram](architecture-dia.png)
+
+---
+
 ## ⚙️ Workflow
 1. **Training Data (`train.xlsx`)**
    - Contains labeled examples for ML training.
