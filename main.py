@@ -1,10 +1,10 @@
 import sqlite3
 
-# Create (or connect to) a database file in Kaggle working directory
+
 conn = sqlite3.connect("parcel_db.sqlite")
 cursor = conn.cursor()
 
-# Create table with status column
+
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS parcels (
     parcel_number TEXT PRIMARY KEY,
@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS parcels (
 )
 """)
 
-# Insert sample records (you can replace with real data)
+#dummy data
 sample_data = [
     ("80000001", "Priya Sharma", "priya.sharma@example.com", "In Transit"),
     ("80000002", "David Johnson", "david.johnson@example.com", "Delivered"),
@@ -84,7 +84,7 @@ def classify_tracking_number(tracking_number, customer_name, email_id, cursor):
         return "wrong parcel number different customer"
 
 
-# Step 4: Define reply templates (extended with status-based replies)
+# personalized replies
 reply_templates = {
     "no parcel number": (
         "Dear Mr./Mrs. {customer_name},\n\n"
@@ -144,27 +144,27 @@ reply_templates = {
     )
 }
 
-# Step 5: Load test dataset (Excel file)
+# test file
 test_df = pd.read_excel("/kaggle/input/datasets/vasudevans19/test2341/test.xlsx")
 
-# Step 6: Connect to SQLite database
+# connect to SQLite database
 conn = sqlite3.connect("parcel_db.sqlite")
 cursor = conn.cursor()
 
-# Step 7: Classify based on tracking_number + DB validation
+# classify based on tracking_number + DB validation
 test_df["classification_label"] = test_df.apply(
     lambda row: classify_tracking_number(row["tracking_number"], row["customer_name"], row["email_id"], cursor),
     axis=1
 )
 
-# Step 8: Fill reply_template column
+# fill reply_template column
 test_df["reply_template"] = test_df.apply(
     lambda row: reply_templates.get(row["classification_label"], "No template found").replace("{customer_name}", row["customer_name"]),
     axis=1
 )
 
 
-# Step 9: Save results back to Excel
+# save those results back to Excel
 test_df.to_excel("results2341.xlsx", index=False)
 
 
