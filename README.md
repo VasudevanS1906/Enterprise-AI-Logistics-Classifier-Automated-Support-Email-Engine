@@ -1,4 +1,4 @@
-# 📦 Automated Customer Support Classification with SQLite Validation
+# 📦 Enterprise AI Logistics Classifier Automated Support Email Engine
 
 ## 📖 Overview
 This project implements a **hybrid machine learning + rule-based pipeline** for automated classification of customer support tickets.  
