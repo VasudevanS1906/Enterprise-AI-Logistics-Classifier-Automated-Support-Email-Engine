@@ -103,6 +103,19 @@ The project has been published as a technical report / preprint on Zenodo, to wh
 
 ## Citation
 For now, cite the Zenodo preprint and software record:
+## Technical Report
+The project has been published as a technical report / preprint on Zenodo, to which the link is provided below: https://doi.org/10.5281/zenodo.23465855
+
+## Citation
+For now, cite the Zenodo preprint and software record:
+
+## Technical Report
+The project has been published as a technical report / preprint on Zenodo, to which the link is provided below: https://doi.org/10.5281/zenodo.23465855
+
+## Citation
+For now, cite the Zenodo preprint and software record:
+
+```bibtex
 @misc{swornampillai2026enterprisailogistics,
       title={Enterprise AI Logistics Classifier & Automated Support Email Engine}, 
       author={Vasudevan Swornampillai},
@@ -112,3 +125,4 @@ For now, cite the Zenodo preprint and software record:
       doi={10.5281/zenodo.23465855},
       url={https://doi.org/10.5281/zenodo.23465855}
 }
+```
